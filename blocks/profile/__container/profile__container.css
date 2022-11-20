@@ -1,0 +1,22 @@
+.profile__container{
+  display: grid;
+  margin: auto;
+}
+
+@media screen and (max-width: 880px) {
+  .profile__container{
+    max-width: 282px;
+    min-height: 286px;
+    grid-template-columns: 282px;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .profile__container{
+    width: 100%;
+    max-width: 880px;
+    grid-template-columns: repeat(4, max-content);
+    align-items: center;
+    min-height: 120px;
+  }
+}
