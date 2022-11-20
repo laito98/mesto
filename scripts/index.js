@@ -33,12 +33,7 @@ popupElement.addEventListener(`click`, closePopupByClickOnOverlay);
 //  cardLikeButton.classList.remove(`element__like-button`);
 //  cardLikeButton.classList.toggle(`element__like-button_is-activated`);
 //}
-
 //cardLikeButton.addEventListener(`click`, activateLikeButton);
-
-
-
-
  // const cardElement = document.querySelector(`.element`);
  // const cardLikeButton = cardElement.querySelector(`.element__like-button`);
  // cardLikeButton.addEventListener(`click`, (function () {
@@ -51,8 +46,21 @@ popupElement.addEventListener(`click`, closePopupByClickOnOverlay);
  //   }
  // }));
 
+const editForm = document.querySelector(`.edit-form__container`);
+const nameInput = document.querySelector(`.edit-form__name-field`);
+const descriptionInput = document.querySelector(`.edit-form__description-field`);
+const formSaveButton = document.querySelector(`.edit-form__save-button`);
 
-//
+function formSubmitHandler(evt){
+  evt.preventDefault();
+  const profileName = document.querySelector(`.profile__name`);
+  const profileDescription = document.querySelector(`.profile__description`);
+  profileName.textContent = `${nameInput.value}`;
+  profileDescription.textContent= `${descriptionInput.value}`;
+};
+
+formSaveButton.addEventListener(`click`, formSubmitHandler);
+
 
 
 
