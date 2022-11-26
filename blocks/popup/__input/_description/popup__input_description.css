@@ -1,4 +1,4 @@
-.edit-form__description-field{
+.popup__input_description{
     width: 358px;
     max-height: 27px;
     border: none;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 880px) {
-    .edit-form__description-field{
+    .popup__input_description{
       width: 238px;
     }
   }

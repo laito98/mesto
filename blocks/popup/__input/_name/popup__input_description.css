@@ -1,4 +1,4 @@
-.edit-form__name-field{
+.popup__input_name{
   width: 358px;
   max-height: 27px;
   border: none;
@@ -9,14 +9,14 @@
 }
 
 @media screen and (max-width: 880px) {
-  .edit-form__name-field{
+  .popup__input_name{
     width: 238px;
     margin-top: 75px;
   }
 }
 
 @media screen and (min-width: 880px){
-  .edit-form__name-field{
+  .popup__input_name{
     margin-top: 54px;
   }
 }

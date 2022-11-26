@@ -1,12 +1,11 @@
-.edit-form__header{
+.popup__header{
   margin: 0;
-
   font-weight: 900;
-
+  font-style: normal;
 }
 
 @media screen and (max-width: 880px){
-  .edit-form__header{
+  .popup__header{
     font-size: 18px;
     line-height: 22px;
     margin-top: 25px;
@@ -14,7 +13,7 @@
 }
 
 @media screen and (min-width: 880px){
-  .edit-form__header{
+  .popup__header{
     margin-top: 36px;
     font-size: 24px;
     line-height: 29px;

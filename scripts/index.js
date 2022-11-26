@@ -1,33 +1,34 @@
 const popupOpenButtonElement = document.querySelector(`.profile__edit-button`);
-const popupElement = document.querySelector(`.edit-form`);
-const popupCloseElement = popupElement.querySelector(`.edit-form__close-button`);
+const popupElement = document.querySelector(`.popup`);
+const popupCloseElement = popupElement.querySelector(`.popup__close-button`);
+const editForm = document.querySelector(`.popup__container`);
+const nameInput = document.querySelector(`.popup__input_name`);
+const descriptionInput = document.querySelector(`.popup__input_description`);
+const formSaveButton = document.querySelector(`.popup__save-button`);
+const profileName = document.querySelector(`.profile__name`);
+const profileDescription = document.querySelector(`.profile__description`);
 
-const togglePopupVisibility = function () {
-  popupElement.classList.toggle(`edit-form_is-opened`);
-}
 
-popupOpenButtonElement.addEventListener('click', function () {
-  popupElement.classList.toggle(`edit-form_is-opened`);
-});
+const addPopupVisibility = function () {
+  popupElement.classList.add(`popup_is-opened`);
+};
 
 const removePopupVisibility = function () {
-  popupElement.classList.remove(`edit-form_is-opened`);
-}
+  popupElement.classList.remove(`popup_is-opened`);
+};
 
+function formSubmitHandler(evt){
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent= `${descriptionInput.value}`;
+  removePopupVisibility();
+};
+
+popupOpenButtonElement.addEventListener('click', addPopupVisibility);
 popupCloseElement.addEventListener('click', removePopupVisibility);
+popupElement.addEventListener(`submit`, formSubmitHandler);
 
 
-
-const closePopupByClickOnOverlay = function (event) {
-  console.log(event.target, event.currentTarget);
-  if (event.target !== event.currentTarget) {
-    return;
-  } else {
-    removePopupVisibility();
-  }
-}
-
-popupElement.addEventListener(`click`, closePopupByClickOnOverlay);
 
 //const activateLikeButton = function(){
 //  cardLikeButton.classList.remove(`element__like-button`);
@@ -46,20 +47,11 @@ popupElement.addEventListener(`click`, closePopupByClickOnOverlay);
  //   }
  // }));
 
-const editForm = document.querySelector(`.edit-form__container`);
-const nameInput = document.querySelector(`.edit-form__name-field`);
-const descriptionInput = document.querySelector(`.edit-form__description-field`);
-const formSaveButton = document.querySelector(`.edit-form__save-button`);
 
-function formSubmitHandler(evt){
-  evt.preventDefault();
-  const profileName = document.querySelector(`.profile__name`);
-  const profileDescription = document.querySelector(`.profile__description`);
-  profileName.textContent = `${nameInput.value}`;
-  profileDescription.textContent= `${descriptionInput.value}`;
-};
 
-formSaveButton.addEventListener(`click`, formSubmitHandler);
+
+
+
 
 
 
