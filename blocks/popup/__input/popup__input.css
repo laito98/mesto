@@ -6,6 +6,7 @@
   font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
+  padding-bottom: 13px;
 }
 
 @media screen and (max-width: 880px) {
