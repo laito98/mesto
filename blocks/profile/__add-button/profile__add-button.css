@@ -4,7 +4,7 @@
   border: 2px white solid;
   background-image: url(../../../images/Vector.svg);
   background-repeat: no-repeat;
-  align-self: baseline;
+  align-self: center;
   height: 50px;
   transition: .3s;
 }
