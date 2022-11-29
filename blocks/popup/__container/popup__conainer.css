@@ -4,7 +4,7 @@
   height: 100%;
   color: black;
   background-color: white;
-  border-radius: 3%;
+  border-radius: 10px;
   align-items: center;
   flex-direction: column;
   position: fixed;

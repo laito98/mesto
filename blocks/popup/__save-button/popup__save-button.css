@@ -5,6 +5,7 @@
   transition: .3s;
   font-style: normal;
   border: none;
+  border-radius: 2px;
 }
 
 .popup__save-button:hover{
