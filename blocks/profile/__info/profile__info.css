@@ -1,6 +1,7 @@
 .profile__info {
   display: grid;
   align-self: center;
+  margin: 0;
 }
 
 @media screen and (max-width: 880px) {
@@ -11,9 +12,7 @@
     align-content: flex-end;
     font-size: 27px;
     width: 100%;
-    margin: 0;
-    grid-template-columns: 264px 18px;
-    column-gap: 0;
+    grid-template-columns: 282px;
     row-gap: 14px;
   }
 }

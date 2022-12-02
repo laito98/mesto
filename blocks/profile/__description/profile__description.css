@@ -9,10 +9,11 @@
 
 @media screen and (max-width: 880px){
   .profile__description{
-    max-width: 100% - 32px;
+    width: 283px;
     text-align: center;
     font-size: 14px;
     line-height: 16.84px;
+    grid-column: 1/2;
   }
 }
 
@@ -20,5 +21,6 @@
   .profile__description{
     font-size: 18px;
     line-height: 22px;
+    width: 336px;
   }
 }

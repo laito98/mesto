@@ -19,6 +19,10 @@ cursor: pointer;
     width: 18px;
     background-size: contain;
     margin-bottom: 5px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-right: 10px;
+    justify-self: flex-end;
   }
 }
 
