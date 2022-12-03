@@ -2,8 +2,9 @@
   background: none;
   background-position: center;
   border: 2px white solid;
-  background-image: url(../../../images/Vector.svg);
+  color: white;
   background-repeat: no-repeat;
+  background-size: auto;
   align-self: center;
   height: 50px;
   transition: .3s;
@@ -16,6 +17,7 @@
 
 @media screen and (max-width: 880px){
   .profile__add-button{
+    background-image: url(../../../images/Vector.svg);
     grid-column: 1/2;
     grid-row: 3/4;
     width: 282px;
@@ -26,6 +28,7 @@
 
 @media screen and (min-width: 880px){
   .profile__add-button{
+    background-image: url(../../../images/vectorbig.svg);
     width: 150px;
     grid-column: 3/4;
     grid-row: 1/2;
