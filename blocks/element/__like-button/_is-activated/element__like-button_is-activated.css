@@ -1,3 +1,13 @@
 .element__like-button_is-activated{
+  background-color: transparent;
   background-image: url(../../../../images/like-button-activated.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  grid-column: 2/3;
+  margin: 30px 20px;
+  height: 19px;
+  width: 22px;
+  transition: .3s;
+  cursor: pointer;
 }

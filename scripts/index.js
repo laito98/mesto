@@ -40,7 +40,6 @@ const popupCloseElementPlace = document.querySelector(`.popup__close-button_new-
 //объявления для карточек
 const cardSection = document.querySelector(`.elements`);
 const card = cardSection.querySelectorAll(`.element`);
-
 const cardList = cardSection.querySelector(`.elements__cards`);
 const cardTemplate = document.querySelector(`.element-template`);
 const addedCard = cardTemplate.content.cloneNode(true);
@@ -98,8 +97,12 @@ function generateCard(dataCard){
   cardLikeButton.addEventListener('click', e => {e.target.classList.toggle(`element__like-button_is-activated`)});
   const cardDeleteButton = newCard.querySelector(`.element__delete-button`);
   cardDeleteButton.addEventListener('click', e => { e.target.closest('.element').remove() });
-
-  newImage.addEventListener('click', e =>{  console.log(e); openBigImage(e.target)});
+  newImage.addEventListener('click', e =>{{
+    openBigImage(bigImagePopup);
+    bigImage.src = dataCard.link;
+    bigImage.alt = dataCard.name;
+    bigImageTitle.textContent = dataCard.name;
+  }});
   return newCard;
 }
 
@@ -130,7 +133,7 @@ popupOpenButtonElement.addEventListener('click', () => {
 //закрыть форму редактирования данных профиля
 popupCloseElement.addEventListener('click', () => {
   closePopup(popupProfile);
-  
+
 });
 //сохранить данные профиля
 popupForm.addEventListener(`submit`, formSubmitHandler);
@@ -143,33 +146,38 @@ addCardButton.addEventListener('click', () => {
 popupPlaceForm.addEventListener('submit', cardSubmitHandler);
 
 
-//закрыть форму добавления карточки
-popupCloseElementPlace.addEventListener('click', () => {
-  closePopup(popupPlace);
-});
-
-
 //попап с большой картинкой
 const bigImagePopup = document.querySelector(`.image-popup`);
-const bigImage = bigImagePopup.querySelector(`.image-popup__image`);
+const bigImage = bigImagePopup.querySelector(`.image-popup__img`);
 const bigImageTitle = bigImagePopup.querySelector(`.image-popup__title`);
+const bigImagePopupClose = bigImagePopup.querySelector(`.image-popup__close-button`);
 
-function openBigImage(image){
-debugger;
-  bigImage.src = image.src;
-  bigImageTitle = image.alt;
-  bigImagePopup.classList.add(`.image-popup_opened`);
+function openBigImage(){
+  bigImagePopup.classList.add(`image-popup_opened`);
 }
 
-
-
 // функция скрытия
-const closePopup = (popup) => {
+function closePopup(popup) {
   popup.classList.remove(`popup_opened`);
 }
 popupCloseElement.addEventListener('click', () => {
   closePopup(popup);
 });
+
+//закрыть форму добавления карточки
+popupCloseElementPlace.addEventListener('click', () => {
+  closePopup(popupPlace);
+});
+
+function closeBigImagePopup(bigImagePopup){
+  bigImagePopup.classList.remove(`image-popup_opened`);
+};
+
+bigImagePopupClose.addEventListener('click', () =>{
+  closeBigImagePopup(bigImagePopup);
+});
+
+
 
 
 

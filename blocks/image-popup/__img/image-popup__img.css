@@ -1,5 +1,22 @@
-.image-popup_img{
-  min-width: 433px;
-  max-width: 816px;
-  height: 540px;
+.image-popup_img {
+  background-image: url(../../../images/altailake2021.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+
+@media screen and (max-width: 880px) {
+  .image-popup_img {
+    width: 240px;
+    height: 299px;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .image-popup_img {
+    min-width: 433px;
+    max-width: 816px;
+    height: 540px;
+  }
 }
