@@ -130,6 +130,7 @@ popupOpenButtonElement.addEventListener('click', () => {
 //закрыть форму редактирования данных профиля
 popupCloseElement.addEventListener('click', () => {
   closePopup(popupProfile);
+  
 });
 //сохранить данные профиля
 popupForm.addEventListener(`submit`, formSubmitHandler);
