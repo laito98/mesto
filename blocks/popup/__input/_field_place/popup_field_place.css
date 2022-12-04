@@ -1,0 +1,15 @@
+.popup__input_field_place{
+  margin: 0;
+}
+
+@media screen and (max-width: 880px) {
+  .popup__input_field_place{
+    margin-top: 75px;
+  }
+}
+
+@media screen and (min-width: 880px){
+  .popup__input_field_place{
+    margin-top: 48px;
+  }
+}
