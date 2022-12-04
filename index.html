@@ -25,45 +25,53 @@
   </section>
   <section class="elements">
     <ul class="elements__cards">
+     <!-- 
       <li class="element">
         <img class="element__image" alt="Тянь-Шань 2021" src="images/tyanshan2022min.JPG">
         <h2 class="element__title">Тянь-Шань</h2>
         <button type="button" class="element__like-button"></button>
+        <button type="button" class="element__delete-button"></button>
       </li>
       <li class="element">
         <img class="element__image" alt="Алтай 2021" src="images/altailake2021.jpg">
         <h2 class="element__title">Алтай</h2>
         <button type="button" class="element__like-button"></button>
+        <button type="button" class="element__delete-button"></button>
       </li>
       <li class="element">
         <img class="element__image" alt="Тянь-Шань 2022" src="images/mountaintyanshan.JPG">
         <h2 class="element__title">Тянь-Шань</h2>
         <button type="button" class="element__like-button"></button>
+        <button type="button" class="element__delete-button"></button>
       </li>
       <li class="element">
         <img class="element__image" alt="Мультинские" src="images/altailake2021.jpg">
         <h2 class="element__title">Мультинские озера</h2>
         <button type="button" class="element__like-button"></button>
+        <button type="button" class="element__delete-button"></button>
       </li>
       <li class="element">
         <img class="element__image" alt="Тянь-Шань" src="images/teapottyanshan.JPG">
         <h2 class="element__title">Тянь-Шань</h2>
         <button type="button" class="element__like-button"></button>
+        <button type="button" class="element__delete-button"></button>
       </li>
       <li class="element">
         <img class="element__image" alt="4000м над уровнем моря" src="images/tyanshan4000m.JPG">
         <h2 class="element__title">Каменно-ледяная пустыня (Тянь-Шань)</h2>
         <button type="button" class="element__like-button"></button>
+        <button type="button" class="element__delete-button"></button>
       </li>
+      -->
     </ul>
   </section>
 </main>
   <footer class="footer">
     <p class="footer__copyright">© 2020 Mesto Russia</p>
   </footer>
-  <section class="popup">
+  <section class="popup popup_profile">
     <div class="popup__container">
-      <button class="popup__close-button" type="button"></button>
+      <button class="popup__close-button popup__close-button_profile" type="button"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
       <form class="popup__form" name="profile-info">
         <input class="popup__input popup__input_field_name" type="text" name="name" value="Жак-Ив Кусто">
@@ -72,6 +80,32 @@
       </form>
     </div>
   </section>
+  <section class="popup popup_new-item">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_new-item" type="button"></button>
+      <h2 class="popup__header">Новое место</h2>
+      <form class="popup__form" name="new-item">
+        <input class="popup__input popup__input_field_place" type="text" name="name" value="Новое место">
+        <input class="popup__input popup__input_field_url" type="text" name="new-item-url" value="Ссылка на картинку">
+        <button class="popup__save-button popup__save-button_new-item" type="submit">Создать</button>
+      </form>
+    </div>
+  </section>
+  <section class="image-popup">
+    <div class="image-popup__container">
+      <img src="" alt="" class="image-popup__img">
+      <p class="image-popup__title"></p>
+    </div>
+  </section>
+  <template class="element-template">
+      <li class="element">
+        <img class="element__image" alt="" src="">
+        <h2 class="element__title"></h2>
+        <button type="button" class="element__like-button" type="button"></button>
+        <button type="button" class="element__delete-button" typr="button"></button>
+      </li>
+  </template>
+  
   <script src="scripts/index.js"></script>
 </body>
 </html>
