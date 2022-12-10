@@ -69,33 +69,33 @@
   <footer class="footer">
     <p class="footer__copyright">© 2020 Mesto Russia</p>
   </footer>
-  <section class="popup popup_profile">
-    <div class="popup__container">
+  <section class="popup popup_form popup_profile">
+    <div class="popup__container popup__container_form">
       <button class="popup__close-button popup__close-button_profile" type="button"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
-      <form class="popup__form" name="profile-info">
-        <input class="popup__input popup__input_field_name" type="text" name="name" value="Жак-Ив Кусто">
-        <input class="popup__input popup__input_field_description" type="text" name="description" value="Исследователь океана">
+      <form class="popup__form popup__form_profile" name="profile-info">
+        <input class="popup__input popup__input_field_name" type="text" name="name" value="" placeholder="Жак-Ив Кусто">
+        <input class="popup__input popup__input_field_description" type="text" name="description" value="" placeholder="Исследователь океана">
         <button class="popup__save-button" type="submit">Сохранить</button>
       </form>
     </div>
   </section>
-  <section class="popup popup_new-item">
-    <div class="popup__container">
+  <section class="popup popup_form popup_new-item">
+    <div class="popup__container popup__container_form">
       <button class="popup__close-button popup__close-button_new-item" type="button"></button>
       <h2 class="popup__header">Новое место</h2>
       <form class="popup__form popup__form_new-item" name="new-item">
-        <input class="popup__input popup__input_field_place" type="text" name="name" value="Новое место">
-        <input class="popup__input popup__input_field_url" type="text" name="new-item-url" value="Ссылка на картинку">
+        <input class="popup__input popup__input_field_place" type="text" name="name" onfocus="clearPlaceInput(this)" value="" placeholder="Новое место">
+        <input class="popup__input popup__input_field_url" type="text" name="new-item-url" onfocus="clearUrlInput(this)" value="" placeholder="Ссылка на картинку">
         <button class="popup__save-button popup__save-button_new-item" type="submit">Создать</button>
       </form>
     </div>
   </section>
-  <section class="image-popup">
-    <div class="image-popup__container">
-      <img src="#" alt="" class="image-popup__img">
-      <p class="image-popup__title"></p>
-      <button class="image-popup__close-button" type="button"></button>
+  <section class="popup popup_image">
+    <div class="popup__container popup__container_image">
+      <img src="#" alt="" class="popup__img">
+      <p class="popup__title"></p>
+      <button class="popup__close-button popup__close-button_image" type="button"></button>
     </div>
   </section>
   <template class="element-template">
