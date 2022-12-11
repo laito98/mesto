@@ -3,7 +3,7 @@
 
 // объявления для формы 1
 const popupOpenButtonElement = document.querySelector(`.profile__edit-button`);
-const popup = document.querySelector(`.popup_form`);
+//const popup = document.querySelector(`.popup_form`);
 const popupProfile = document.querySelector(`.popup_profile`);
 const popupElement = document.querySelector(`.popup__container_form`);
 const popupProfileForm = document.querySelector(`.popup__form_profile`);
@@ -22,36 +22,22 @@ const bigImage = bigImagePopup.querySelector(`.popup__img`);
 const bigImageTitle = bigImagePopup.querySelector(`.popup__title`);
 const bigImagePopupClose = bigImagePopup.querySelector(`.popup__close-button`);
 
-// функция сохранения информации профиля
-function formProfileSubmitHandler(evt) {
-  evt.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileDescription.textContent = descriptionInput.value;
-  closePopup(popupProfile);
-};
-
-
-
 //объявления для формы 2
 //объявления для добавления фото
 const popupPlace = document.querySelector(`.popup_new-item`);
-
 const newCardButton = document.querySelector(`.profile__add-button`);
 const popupCloseElementPlace = document.querySelector(`.popup__close-button_new-item`);
 
 //объявления для карточек
 const cardSection = document.querySelector(`.elements`);
-const card = cardSection.querySelectorAll(`.element`);
+const cardList = cardSection.querySelectorAll(`.element`);
 const cardsContainer = cardSection.querySelector(`.elements__cards`);
 const cardTemplate = document.querySelector(`.element-template`);
-const addedCard = cardTemplate.content.cloneNode(true);
 const popupPlaceForm = popupPlace.querySelector(`.popup__form_new-item`);
 // объявление для картинки
 const imageCloseElement = popupPlace.querySelector(`.popup__close_element_image`);
-
 const placeInput = popupPlaceForm.querySelector(`.popup__input_field_place`);
 const urlInput = popupPlaceForm.querySelector(`.popup__input_field_url`);
-
 
 
 //массив с карточками
@@ -82,6 +68,14 @@ const initialCards = [
   }
 ];
 
+// функция сохранения информации профиля
+function formProfileSubmitHandler(evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = descriptionInput.value;
+  closePopup(popupProfile);
+};
+
 
 //содержание карточки
 function generateCard(dataCard){
@@ -96,7 +90,6 @@ function generateCard(dataCard){
   const cardDeleteButton = newCard.querySelector(`.element__delete-button`);
   cardDeleteButton.addEventListener('click', e => { e.target.closest('.element').remove() });
   newImage.addEventListener('click', e =>{{
-    debugger;
     openPopup(bigImagePopup);
     bigImage.src = dataCard.link;
     bigImage.alt = dataCard.name;
@@ -106,10 +99,8 @@ function generateCard(dataCard){
 }
 
 //обработчик событий СОЗДАТЬ
-function cardSubmitHandler(evt) {
+function addCardSubmitHandler(evt) {
   evt.preventDefault();
-
-placeInput.value = document.querySelector(`.element__title`).textContent; 
   renderCard({name: placeInput.value, link: urlInput.value});
   closePopup(popupPlace);
 };
@@ -137,19 +128,18 @@ initialCards.forEach((function (dataCard) {
 // очищение поля ввода при введении текста
 function clearPlaceInput(placeInput){
   if (placeInput.value = '') {
-placeInput.value = " ";
+placeInput.value = "";
   }
 }
 
 function clearUrlInput(urlInput){
   if (urlInput.value ='') {
-    urlInput.value = " ";
+    urlInput.value = "";
   }
 }
 
 
 
-// обработчики
 
 //открыть форму редактирования данных профиля
 popupOpenButtonElement.addEventListener('click', () => {
@@ -171,12 +161,12 @@ newCardButton.addEventListener('click', () => {
   openPopup(popupPlace);
 });
 //создать новую карточку
-popupPlaceForm.addEventListener('submit', cardSubmitHandler);
+popupPlaceForm.addEventListener('submit', addCardSubmitHandler);
 
 //закрыть карточку
 
 popupCloseElement.addEventListener('click', () => {
-  closePopup(popup);
+  closePopup(popupProfile);
 });
 
 //закрыть форму добавления карточки
