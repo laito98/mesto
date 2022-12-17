@@ -1,18 +1,6 @@
 .popup__container_image{
   background-color: none;
   margin: auto;
-}
-
-@media screen and (max-width: 880px){
-  .popup__container_image{
-    width: 240px;
-  }
-}
-
-@media screen and (min-width: 880px){
-.popup__container_image{
-    height: 562px;
-    min-width: 433px;
-    max-width: 816px;
-  }
+  max-width: 75vw;
+  max-height: 75vh;
 }
