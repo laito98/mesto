@@ -74,8 +74,8 @@
       <button class="popup__close-button popup__close-button_profile" type="button"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
       <form class="popup__form popup__form_profile" name="profile-info">
-        <input class="popup__input popup__input_field_name" type="text" name="name" value="" placeholder="Имя">
-        <input class="popup__input popup__input_field_description" type="text" name="description" value="" placeholder="О себе">
+        <input class="popup__input popup__input_field_name" type="text" name="name" value="" placeholder="Имя" onfocus="clearInput(this)">
+        <input class="popup__input popup__input_field_description" type="text" name="description" value="" placeholder="О себе" onfocus="clearInput(this)">
         <button class="popup__save-button" type="submit">Сохранить</button>
       </form>
     </div>
@@ -85,8 +85,8 @@
       <button class="popup__close-button popup__close-button_new-item" type="button"></button>
       <h2 class="popup__header">Новое место</h2>
       <form class="popup__form popup__form_new-item" name="new-item">
-        <input class="popup__input popup__input_field_place" type="text" name="name" onfocus="clearPlaceInput(this)" value="" placeholder="Новое место">
-        <input class="popup__input popup__input_field_url" type="text" name="new-item-url" onfocus="clearUrlInput(this)" value="" placeholder="Ссылка на картинку">
+        <input class="popup__input popup__input_field_place" type="text" name="name" onfocus="clearInput(this)" value="" placeholder="Новое место">
+        <input class="popup__input popup__input_field_url" type="url" name="new-item-url" onfocus="clearInput(this)" value="" placeholder="Ссылка на картинку">
         <button class="popup__save-button popup__save-button_new-item" type="submit">Создать</button>
       </form>
     </div>

@@ -1,6 +1,5 @@
 .popup__container_image{
   background-color: none;
   margin: auto;
-  max-width: 75vw;
-  max-height: 75vh;
 }
+

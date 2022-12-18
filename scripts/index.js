@@ -104,9 +104,10 @@ function addCardSubmitHandler(evt) {
 };
  
 //функция видимости
-function openPopup(popup) {
-  popup.classList.add(`popup_opened`);
+function openPopup(target) {
+  target.classList.add(`popup_opened`);
 }
+
 
 // функция скрытия
 function closePopup(popup) {
@@ -123,26 +124,24 @@ initialCards.forEach((function (dataCard) {
   renderCard(dataCard);
 }));
 
-// очищение поля ввода при введении текста
-function clearPlaceInput(placeInput){
-  if (placeInput.value != '') {
-placeInput.value = "";
+
+//функция очищения инпута у меня с компьютера работает, я не понимаю, почему замечание осталось
+function clearInput(target){
+  if (target.value !=''){
+    target.value = ""
   }
 }
-
-function clearUrlInput(urlInput){
-  if (urlInput.value !='') {
-    urlInput.value = "";
-  }
-}
-
 
 
 
 //открыть форму редактирования данных профиля
 popupOpenButtonElement.addEventListener('click', () => {
   openPopup(popupProfile);
+  nameInput.value = profileName.textContent;
+  descriptionInput.value = profileDescription.textContent;
 });
+
+
 //закрыть форму редактирования данных профиля
 popupProfileCloseElement.addEventListener('click', () => {
   closePopup(popupProfile);
@@ -156,7 +155,6 @@ popupProfileForm.addEventListener(`submit`, handleProfileSubmit);
 
 //открыть форму добавления карточек фотографий
 newCardButton.addEventListener('click', () => {
-  debugger;
   openPopup(popupPlace);
 });
 //создать новую карточку
