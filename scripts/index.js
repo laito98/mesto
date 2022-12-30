@@ -148,8 +148,10 @@ popupProfileCloseElement.addEventListener('click', () => {
 });
 
 
-
-
+urlInput.addEventListener('click', clearInput);
+nameInput.addEventListener('click', clearInput);
+placeInput.addEventListener('click', clearInput);
+descriptionInput.addEventListener('click', clearInput);
 //сохранить данные профиля
 popupProfileForm.addEventListener(`submit`, handleProfileSubmit);
 
