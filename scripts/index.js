@@ -101,6 +101,7 @@ function addCardSubmitHandler(evt) {
   evt.preventDefault();
   renderCard({name: placeInput.value, link: urlInput.value});
   closePopup(popupPlace);
+  popupPlaceForm.reset();
 };
  
 //функция видимости
@@ -148,9 +149,7 @@ popupProfileCloseElement.addEventListener('click', () => {
 });
 
 
-urlInput.addEventListener('click', clearInput);
 nameInput.addEventListener('click', clearInput);
-placeInput.addEventListener('click', clearInput);
 descriptionInput.addEventListener('click', clearInput);
 //сохранить данные профиля
 popupProfileForm.addEventListener(`submit`, handleProfileSubmit);
