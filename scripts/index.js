@@ -128,7 +128,7 @@ initialCards.forEach((function (dataCard) {
 //функция очищения инпута у меня с компьютера работает, я не понимаю, почему замечание осталось
 function clearInput(target){
   if (target.value !=''){
-    target.value = ""
+    target.value = "";
   }
 }
 
