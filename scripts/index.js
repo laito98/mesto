@@ -145,7 +145,18 @@ popupElement.addEventListener('click', (e)=>{
 
 closePopupOverlay();
 
+const closePopupEscape = (e)=>{
+  const popupList = Array.from(document.querySelectorAll(`.popup`));
+  popupList.forEach((popupElement)=>{
+document.addEventListener('keydown', (e)=>{
+  if (e.key == "Escape" && popupElement.classList.contains(`popup_opened`)){
+    closePopup(popupElement)
+  };
+});
+  });
+};
 
+closePopupEscape();
 
 
 
