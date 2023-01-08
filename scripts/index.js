@@ -1,6 +1,5 @@
 //общие штуки
 
-
 // объявления для формы 1
 const popupOpenButtonElement = document.querySelector(`.profile__edit-button`);
 //const popup = document.querySelector(`.popup_form`);
@@ -121,9 +120,34 @@ function renderCard(dataCard){
   cardsContainer.prepend(generateCard(dataCard));
 }
 
+
+
+
 initialCards.forEach((function (dataCard) {
   renderCard(dataCard);
 }));
+
+
+
+
+//закрытие по оверлею
+
+const closePopupOverlay = (e) =>{
+const popupList = Array.from(document.querySelectorAll('.popup'));
+popupList.forEach((popupElement) =>{
+popupElement.addEventListener('click', (e)=>{
+  if(e.target === popupElement) {
+    closePopup(popupElement);
+  }
+})
+})
+};                                                                                          
+
+closePopupOverlay();
+
+
+
+
 
 
 //функция очищения инпута у меня с компьютера работает, я не понимаю, почему замечание осталось
@@ -133,15 +157,12 @@ function clearInput(target){
   }
 }
 
-
-
 //открыть форму редактирования данных профиля
 popupOpenButtonElement.addEventListener('click', () => {
   openPopup(popupProfile);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
 });
-
 
 //закрыть форму редактирования данных профиля
 popupProfileCloseElement.addEventListener('click', () => {
@@ -176,7 +197,6 @@ popupCloseElementPlace.addEventListener('click', () => {
 bigImagePopupClose.addEventListener('click', () =>{
   closePopup(bigImagePopup);
 });
-
 
 
 
