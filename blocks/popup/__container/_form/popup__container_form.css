@@ -7,13 +7,13 @@
 @media screen and (max-width: 880px) {
   .popup__container_form{
     width: 282px;
-    min-height: 322px;
+    height: 322px;
   }
 }
 
 @media screen and (min-width: 880px){
   .popup__container_form{
     width: 430px;
-    min-height: 330px;
+    height: 330px;
   }
 }

@@ -1,5 +1,5 @@
 //общие штуки
-
+const popupList = Array.from(document.querySelectorAll('.popup'));
 // объявления для формы 1
 const popupOpenButtonElement = document.querySelector(`.profile__edit-button`);
 //const popup = document.querySelector(`.popup_form`);
@@ -25,6 +25,7 @@ const bigImagePopupClose = bigImagePopup.querySelector(`.popup__close-button`);
 const popupPlace = document.querySelector(`.popup_new-item`);
 const newCardButton = document.querySelector(`.profile__add-button`);
 const popupCloseElementPlace = document.querySelector(`.popup__close-button_new-item`);
+const popupPlaceCreateBtn = popupPlace.querySelector(`.popup__save-button_new-item`);
 
 //объявления для карточек
 const cardSection = document.querySelector(`.elements`);
@@ -75,7 +76,7 @@ function handleProfileSubmit(evt) {
 
 
 //содержание карточки
-function generateCard(dataCard){
+function generateCard(dataCard) {
   const newCard = cardTemplate.content.cloneNode(true);
   const newTitle = newCard.querySelector(`.element__title`);
   const newImage = newCard.querySelector(`.element__image`);
@@ -83,40 +84,45 @@ function generateCard(dataCard){
   newImage.alt = dataCard.name;
   newImage.src = dataCard.link;
   const cardLikeButton = newCard.querySelector('.element__like-button');
-  cardLikeButton.addEventListener('click', e => {e.target.classList.toggle(`element__like-button_is-activated`)});
+  cardLikeButton.addEventListener('click', e => { e.target.classList.toggle(`element__like-button_is-activated`) });
   const cardDeleteButton = newCard.querySelector(`.element__delete-button`);
   cardDeleteButton.addEventListener('click', e => { e.target.closest('.element').remove() });
-  newImage.addEventListener('click', e =>{{
-    openPopup(bigImagePopup);
-    bigImage.src = dataCard.link;
-    bigImage.alt = dataCard.name;
-    bigImageTitle.textContent = dataCard.name;
-  }});
+  newImage.addEventListener('click', e => {
+    {
+      openPopup(bigImagePopup);
+      bigImage.src = dataCard.link;
+      bigImage.alt = dataCard.name;
+      bigImageTitle.textContent = dataCard.name;
+    }
+  });
   return newCard;
 }
 
 //обработчик событий СОЗДАТЬ
 function addCardSubmitHandler(evt) {
   evt.preventDefault();
-  renderCard({name: placeInput.value, link: urlInput.value});
+  renderCard({ name: placeInput.value, link: urlInput.value });
   closePopup(popupPlace);
   popupPlaceForm.reset();
+popupPlaceCreateBtn.disabled = true;
 };
- 
+
 //функция видимости
 function openPopup(target) {
   target.classList.add(`popup_opened`);
+  document.addEventListener('keydown', closePopupEscape);
 }
 
 
 // функция скрытия
 function closePopup(popup) {
   popup.classList.remove(`popup_opened`);
+  document.removeEventListener('keydown', closePopupEscape);
 }
 
 
 //функция создания карточки
-function renderCard(dataCard){
+function renderCard(dataCard) {
   cardsContainer.prepend(generateCard(dataCard));
 }
 
@@ -132,38 +138,29 @@ initialCards.forEach((function (dataCard) {
 
 //закрытие по оверлею
 
-const closePopupOverlay = (e) =>{
-const popupList = Array.from(document.querySelectorAll('.popup'));
-popupList.forEach((popupElement) =>{
-popupElement.addEventListener('click', (e)=>{
-  if(e.target === popupElement) {
-    closePopup(popupElement);
-  }
-})
-})
-};                                                                                          
+const closePopupOverlay = (e) => {
+  popupList.forEach((popupElement) => {
+    popupElement.addEventListener('mousedown', (e) => {
+      if (e.target === popupElement) {
+        closePopup(popupElement);
+      }
+    })
+  })
+};
 
 closePopupOverlay();
 
-const closePopupEscape = (e)=>{
-  const popupList = Array.from(document.querySelectorAll(`.popup`));
-  popupList.forEach((popupElement)=>{
-document.addEventListener('keydown', (e)=>{
-  if (e.key == "Escape" && popupElement.classList.contains(`popup_opened`)){
-    closePopup(popupElement)
-  };
-});
-  });
+const closePopupEscape = (e) => {
+      if (e.key === "Escape") {
+        closePopup(document.querySelector(`.popup_opened`));
+      };
 };
-
-closePopupEscape();
-
 
 
 
 //функция очищения инпута у меня с компьютера работает, я не понимаю, почему замечание осталось
-function clearInput(target){
-  if (target.value !=''){
+function clearInput(target) {
+  if (target.value != '') {
     target.value = "";
   }
 }
@@ -205,7 +202,7 @@ popupCloseElementPlace.addEventListener('click', () => {
 });
 
 
-bigImagePopupClose.addEventListener('click', () =>{
+bigImagePopupClose.addEventListener('click', () => {
   closePopup(bigImagePopup);
 });
 

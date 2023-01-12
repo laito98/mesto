@@ -1,4 +1,7 @@
 .popup__input_field_description{
     margin-top: 30px;
+    position: absolute;
+    top: 42%;
+    left: 8%; 
 }
 
