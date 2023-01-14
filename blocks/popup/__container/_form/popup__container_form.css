@@ -7,7 +7,7 @@
 @media screen and (max-width: 880px) {
   .popup__container_form{
     width: 282px;
-    height: 322px;
+    min-height: 322px;
   }
 }
 
@@ -17,3 +17,4 @@
     height: 330px;
   }
 }
+

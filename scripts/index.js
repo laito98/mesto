@@ -104,7 +104,8 @@ function addCardSubmitHandler(evt) {
   renderCard({ name: placeInput.value, link: urlInput.value });
   closePopup(popupPlace);
   popupPlaceForm.reset();
-popupPlaceCreateBtn.disabled = true;
+  popupPlaceCreateBtn.disabled = true;
+  popupPlaceCreateBtn.classList.add('popup__save-button_disabled')
 };
 
 //функция видимости

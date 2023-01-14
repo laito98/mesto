@@ -2,4 +2,6 @@
   color: red;
   font-size: 12px;
   margin-top: 5px;
+  line-height: 15px;
+  overflow: hidden;
 }
