@@ -6,6 +6,7 @@
   font-style: normal;
   border: none;
   border-radius: 2px;
+  margin: auto;
 }
 
 .popup__save-button:hover {
@@ -19,7 +20,7 @@
     height: 46px;
     font-size: 14px;
     line-height: 17px;
-    margin-top: 45px;
+    margin-top: 40px;
   }
 }
 
@@ -29,7 +30,7 @@
     line-height: 22px;
     width: 358px;
     height: 50px;
-    margin-top: 48px;
+    margin-top: 30px;
     margin-bottom: 36px;
   }
 }
