@@ -74,3 +74,26 @@ function enableValidation(config) {
 
 
 enableValidation(validationConfig);
+
+//содержание карточки
+function generateCard(dataCard) {
+  const newCard = cardTemplate.content.cloneNode(true);
+  const newTitle = newCard.querySelector(`.element__title`);
+  const newImage = newCard.querySelector(`.element__image`);
+  newTitle.textContent = dataCard.name;
+  newImage.alt = dataCard.name;
+  newImage.src = dataCard.link;
+  const cardLikeButton = newCard.querySelector('.element__like-button');
+  cardLikeButton.addEventListener('click', e => { e.target.classList.toggle(`element__like-button_is-activated`) });
+  const cardDeleteButton = newCard.querySelector(`.element__delete-button`);
+  cardDeleteButton.addEventListener('click', e => { e.target.closest('.element').remove() });
+  newImage.addEventListener('click', e => {
+    {
+      openPopup(bigImagePopup);
+      bigImage.src = dataCard.link;
+      bigImage.alt = dataCard.name;
+      bigImageTitle.textContent = dataCard.name;
+    }
+  });
+  return newCard;
+}

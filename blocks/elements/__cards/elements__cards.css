@@ -1,4 +1,4 @@
-.elements__cards {
+.element-template {
   list-style: none;
   list-style-type: none;
   padding: 0;
@@ -7,13 +7,13 @@
   row-gap: 20px;
 }
 @media screen and (max-width: 880px) {
-  .elements__cards{
+  .element-template{
     max-width: 282px;
     grid-template-columns: auto;
   }
 }
 @media screen and (min-width: 880px) {
-  .elements__cards {
+  .element-template {
     max-width: 880px;
     grid-template-columns: repeat(3, 282px);
     grid-template-rows: repeat(auto-fit, 361px);
